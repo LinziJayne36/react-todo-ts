@@ -24,6 +24,23 @@
 .todos {
     display: flex;
     justify-content: space-evenly;
-    width: 24%;
+    width: 36.5%;
     flex-wrap: wrap;
+}
+
+.todos-single {
+    display: flex;
+    width: 100%;
+    margin-top: 1.5em;
+    border-style: solid;
+    border-color: rgb(214, 245, 167);
+    border-radius: 4px;
+}
+
+.edit-icon {
+    color: rgb(214, 245, 167);
+}
+
+.delete-icon {
+    color: rgb(253, 57, 57);
 }
