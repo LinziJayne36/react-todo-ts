@@ -47,3 +47,8 @@
 .delete-icon {
     color: rgb(253, 57, 57);
 }
+
+.icon {
+    margin: 5px;
+    cursor: pointer;
+}
