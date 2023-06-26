@@ -20,11 +20,17 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
             )
         );
     };
+
+    const handleDelete = (id: number) => {
+        //This uses the setTodos to update state of todos - by using filter to only return as an argument to setTodos those todos whose id does not
+        //match the one whose delete button was clicked, we effectively delete the todo because it is no longer in state
+        setTodos(todos.filter((todo) => todo.id !== id));
+    };
     return (
         <div>
             <form className="todos-single">
-                //This will conditionally render the todo - if isComplete is
-                true it renders it as strikethru, if false renders as usual span
+                {/*This will conditionally render the todo - if isComplete is
+                true it renders it as strikethru, if false renders as usual span*/}
                 {todo.isComplete ? (
                     <s className="todos-single-text">{todo.todo}</s>
                 ) : (
@@ -35,7 +41,10 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
                         <AiFillEdit className="edit-icon" />
                     </span>
                     <span className="icon">
-                        <AiFillDelete className="delete-icon" />
+                        <AiFillDelete
+                            className="delete-icon"
+                            onClick={() => handleDelete(todo.id)}
+                        />
                     </span>
                     <span className="icon" onClick={() => handleDone(todo.id)}>
                         <MdDoneOutline />
